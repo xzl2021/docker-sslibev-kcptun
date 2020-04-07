@@ -4,6 +4,7 @@
   "key":"123456",
   "crypt":"none",
   "mode":"fast2",
+  "smuxver":1,
   "mtu":1350,
   "sndwnd":1024,
   "rcvwnd":1024,
