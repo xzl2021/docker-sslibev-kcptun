@@ -5,8 +5,7 @@
     "timeout":300,
     "user":"nobody",
     "method":"aes-128-gcm",
+    "fast_open":true,
     "nameserver":"8.8.8.8",
-    "mode":"tcp_and_udp",
-    "plugin":"kcptun",
-    "plugin_opts":"listen=:444;key=123456;crypt=none;mode=fast2;mtu=1350;sndwnd=1024;rcvwnd=1024;datashard=10;parityshard=3;nocomp=true;keepalive=10;autoexpire=0;"
+    "mode":"tcp_and_udp"
 }
