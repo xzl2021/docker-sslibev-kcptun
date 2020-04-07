@@ -43,6 +43,7 @@ RUN  set -ex \
      && tar zxvf kcptun.tar.gz \
      && mv server_linux_amd64 /usr/local/bin/kcptun \
      && wget --no-check-certificate -O /config.json https://raw.githubusercontent.com/xzl2021/docker-sslibev-kcptun/master/files/config.json \
+     && wget --no-check-certificate -O /kcptun.json https://raw.githubusercontent.com/xzl2021/docker-sslibev-kcptun/master/files/kcptun.json \
      && wget --no-check-certificate -O /usr/local/bin/sslibev-kcptun https://raw.githubusercontent.com/xzl2021/docker-sslibev-kcptun/master/files/sslibev-kcptun.sh \
      && chmod +x /usr/local/bin/kcptun /usr/local/bin/sslibev-kcptun \
      && cd / \
