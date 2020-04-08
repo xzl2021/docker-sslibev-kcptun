@@ -39,7 +39,7 @@ RUN  set -ex \
           $(scanelf --needed --nobanner /usr/bin/ss-* \
           | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
           | sort -u) \
-     && wget --no-check-certificate -O kcptun.tar.gz https://github.com/shadowsocks/kcptun/releases/download/v20170718/kcptun-linux-amd64-20170718.tar.gz \
+     && wget --no-check-certificate -O kcptun.tar.gz https://github.com/xtaci/kcptun/releases/latest/download/kcptun-linux-amd64-20200201.tar.gz \
      && tar zxvf kcptun.tar.gz \
      && mv server_linux_amd64 /usr/local/bin/kcptun \
      && wget --no-check-certificate -O /config.json https://raw.githubusercontent.com/xzl2021/docker-sslibev-kcptun/master/files/config.json \
