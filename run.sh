@@ -1,3 +1,3 @@
 #!/bin/bash
-mkdir -p /etc/shadowsocks-libev/
-docker run -d -p 8443:443/udp -p 8444:444/udp -v /etc/shadowsocks-libev:/etc/shadowsocks-libev --restart=always --name sslibev-kcptun sslibev-kcptun:latest
+mkdir -p /etc/shadowsocks-libev-kcptun/
+docker run -d -p 9443:443/udp -p 9444:444/udp -v /etc/shadowsocks-libev-kcptun:/etc/shadowsocks-libev --restart=always --name ss-kcp sslibev-kcptun:latest
