@@ -2,7 +2,7 @@
 # Dockerfile for shadowsocks-libev
 #
 
-FROM alpine
+FROM alpine:3.13
 LABEL maintainer="xzl2021 <xzl2021#hotmail.com>"
 
 WORKDIR /
