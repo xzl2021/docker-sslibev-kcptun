@@ -22,8 +22,9 @@ RUN  set -ex \
           pcre-dev \
           git \
      # Build & install
-     && git clone --depth=1 https://github.com/shadowsocks/shadowsocks-libev.git /tmp/libev \
+     && git clone https://github.com/shadowsocks/shadowsocks-libev.git /tmp/libev \
      && cd /tmp/libev \
+     && git checkout v3.3.5 \
      && git submodule update --init --recursive \
      && ./autogen.sh \
      && ./configure --prefix=/usr --disable-documentation \
@@ -39,9 +40,7 @@ RUN  set -ex \
           $(scanelf --needed --nobanner /usr/bin/ss-* \
           | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
           | sort -u) \
-     && wget --no-check-certificate -O kcptun.tar.gz https://github.com/xtaci/kcptun/releases/download/v20200409/kcptun-linux-amd64-20200409.tar.gz \
-     && tar zxvf kcptun.tar.gz \
-     && mv server_linux_amd64 /usr/local/bin/kcptun \
+     && wget --no-check-certificate -O /usr/local/bin/kcptun https://raw.githubusercontent.com/xzl2021/docker-sslibev-kcptun/master/files/kcptun_server_linux_amd64 \
      && wget --no-check-certificate -O /config.json https://raw.githubusercontent.com/xzl2021/docker-sslibev-kcptun/master/files/config.json \
      && wget --no-check-certificate -O /kcptun.json https://raw.githubusercontent.com/xzl2021/docker-sslibev-kcptun/master/files/kcptun.json \
      && wget --no-check-certificate -O /usr/local/bin/sslibev-kcptun https://raw.githubusercontent.com/xzl2021/docker-sslibev-kcptun/master/files/sslibev-kcptun.sh \
